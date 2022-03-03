@@ -66,4 +66,24 @@ module.exports = {
             res.json(e);
         }
     },
+
+    addFriendToUserById: async (req, res) => {
+        const { userId } = req.params;
+        const { friends } = req.body;
+        try {
+            const updatedUser = await User.findByIdAndUpdate(userId,
+                {
+                    $push: {
+                        friends
+                    },
+                },
+                {
+                    new: true,
+                }
+            );
+            res.json(updatedUser);
+        } catch (e) {
+            res.json(e);
+        }
+    }
 };
