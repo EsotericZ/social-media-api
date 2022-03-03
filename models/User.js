@@ -19,12 +19,18 @@ const userSchema = new Schema({
             return `${userObject.email} is not a valid email address`;
         }
     },
-    // thoughts: {
-    //     type: String,
-    // },
-    // friends: {
-    //     type: String,
-    // },
+    thoughts: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Thought',
+        }
+    ],
+    friends: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'User',
+        }
+    ],
 });
 
 const User = model('User', userSchema);
