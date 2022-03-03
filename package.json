@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/EsotericZ/social-media-api#readme",
   "dependencies": {
+    "@faker-js/faker": "^6.0.0-alpha.7",
     "express": "^4.17.3",
     "mongoose": "^6.2.3",
     "validator": "^13.7.0"
