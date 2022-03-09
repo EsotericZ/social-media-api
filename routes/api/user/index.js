@@ -3,6 +3,7 @@ const { createUser,
         getAllUsers,
         getUserById,
         addFriendToUserById,
+        deleteFriendToUserById,
         updateUserById,
         deleteUserById
      } = require('../../../controllers/userController');
@@ -12,6 +13,7 @@ router.route('/')
     .get(getAllUsers);
 
 router.put('/:userId/friends/:friendId', addFriendToUserById);
+router.delete('/:userId/friends/:friendId', deleteFriendToUserById);
 
 router.route('/:userId')
      .get(getUserById)

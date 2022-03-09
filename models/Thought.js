@@ -11,8 +11,8 @@ const reactionSchema = new Schema({
         maxlength: 280,
     },
     username: {
-        type: Schema.Types.ObjectId,
-        ref: 'User',
+        type: String,
+        required: true,
     },
     createdAt: {
         type: Date,
@@ -36,25 +36,18 @@ const thoughtSchema = new Schema({
         default: Date.now,
     },
     username: {
-        type: Schema.Types.ObjectId,
-        ref: 'User',
+        type: String,
+        required: true,
     },
     reactions: [reactionSchema],
+},
+{
     toJSON: {
         virtuals: true,
         getters: true,
     },
 },
-// { timestamps: true }
 );
-
-thoughtSchema.virtual('newDate').set(function(currentValueBeingSaved) {
-    const dateArr = currentValueBeingSaved
-    const newD = 12;
-    this.set({
-        date: newD,
-    })
-})
 
 thoughtSchema.virtual('reactionCount').get(function() {
     return this.reactions.length;

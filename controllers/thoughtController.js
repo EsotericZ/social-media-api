@@ -59,4 +59,7 @@ module.exports = {
             res.json(e);
         }
     },
+
+    // post a reactions
+    // delete a reaction
 }

@@ -12,8 +12,6 @@ module.exports = {
             const newUser = await User.create({
                 username,
                 email,
-                // thoughts,
-                // friends,
             });
             res.json(newUser);
         } catch (e) {
@@ -85,5 +83,25 @@ module.exports = {
         } catch (e) {
             res.json(e);
         }
-    }
+    },
+
+    deleteFriendToUserById: async (req, res) => {
+        const { userId } = req.params;
+        const { friends } = req.body;
+        try {
+            const updatedUser = await User.findByIdAndUpdate(userId,
+                {
+                    $pull: {
+                        friends
+                    },
+                },
+                {
+                    new: true,
+                }
+            );
+            res.json(updatedUser);
+        } catch (e) {
+            res.json(e);
+        }
+    },
 };
