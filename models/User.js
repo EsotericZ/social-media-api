@@ -12,11 +12,10 @@ const userSchema = new Schema({
         type: String,
         unique: true,
         required: true,
-        validator: function(value) {
-            return isEmail(value);
-        },
-        message: function(userObject) {
-            return `${userObject.email} is not a valid email address`;
+        validate: {
+            validator: function(value) {
+                return isEmail(value);
+            },
         }
     },
     thoughts: [

@@ -66,13 +66,12 @@ module.exports = {
     },
 
     addFriendToUserById: async (req, res) => {
-        const { userId } = req.params;
-        const { friends } = req.body;
+        const { userId, friendId } = req.params;
         try {
             const updatedUser = await User.findByIdAndUpdate(userId,
                 {
                     $push: {
-                        friends
+                        friends: friendId,
                     },
                 },
                 {
@@ -86,13 +85,12 @@ module.exports = {
     },
 
     deleteFriendToUserById: async (req, res) => {
-        const { userId } = req.params;
-        const { friends } = req.body;
+        const { userId, friendId } = req.params;
         try {
             const updatedUser = await User.findByIdAndUpdate(userId,
                 {
                     $pull: {
-                        friends
+                        friends: friendId,
                     },
                 },
                 {
