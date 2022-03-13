@@ -21,7 +21,7 @@ npm run seed
 Demonstration on how GET, POST, UPDATE and DELETE information from a MongoDB  
 
 Video Example  
-[![Watch](https://drive.google.com/file/d/18ZpZTTLpdzNZ4aL-hcQh7UWoL2fvxH9k/view)](https://watch.screencastify.com/v/MSRhzrJCqlGbFDTl6NJm)
+[![Watch](https://img.freepik.com/free-vector/video-player-interface-play-button-play-video_177006-355.jpg?size=626&ext=jpg)](https://drive.google.com/file/d/18ZpZTTLpdzNZ4aL-hcQh7UWoL2fvxH9k/view)
 
       
 ## Contributors 
